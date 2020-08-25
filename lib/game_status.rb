@@ -37,5 +37,11 @@ def draw?(board)
 end
 
 def over?(board)
-  full?(board) || draw?(board) || won?(board)
+  won?(board) || draw?(board)
+end
+
+def winner(board)
+  win_combination = won?(board) 
+  winning_location = win_combination[0]
+  board[winning_location]
 end
